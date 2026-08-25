@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <title>Spa Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div class="brand">
+        <span class="flag">🇧🇪</span>
+        <div>
+          <h1>SPA ENGINEER</h1>
+          <p>Race Engineer • Circuit de Spa-Francorchamps</p>
+        </div>
+      </div>
+      <div class="status">
+        <span id="statusDot"></span>
+        <span id="statusText">READY</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="lap-display">
+        <span class="label">LAP TIME</span>
+        <strong id="lapTime">0:00.000</strong>
+      </div>
+      <div class="lap-number">
+        <span class="label">LAP</span>
+        <strong id="lapNumber">1</strong>
+      </div>
+    </section>
+
+    <section class="pace-panel">
+      <div class="section-title">
+        <h2>Target Pace</h2>
+        <span id="paceDisplay">1:45.000</span>
+      </div>
+      <div class="pace-buttons">
+        <button class="pace-btn active" data-pace="105">1:45</button>
+        <button class="pace-btn" data-pace="106">1:46</button>
+        <button class="pace-btn" data-pace="107">1:47</button>
+        <button class="pace-btn" data-pace="108">1:48</button>
+      </div>
+      <input id="paceSlider" type="range" min="100" max="115" step="0.1" value="105">
+      <div class="slider-labels"><span>1:40</span><span>1:55</span></div>
+    </section>
+
+    <section class="engineer-panel">
+      <div class="section-title">
+        <h2>Engineer</h2>
+        <span id="currentCorner">WAITING</span>
+      </div>
+      <div class="call-box">
+        <div class="call-icon">🎧</div>
+        <div class="call-content">
+          <span class="small-label">LAST CALL</span>
+          <strong id="lastCall">Engineer ready.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="startBtn" class="primary">▶ START LAP</button>
+      <button id="pauseBtn" class="secondary" disabled>⏸ PAUSE</button>
+      <button id="resetBtn" class="secondary">↻ RESET</button>
+    </section>
+
+    <section class="settings">
+      <div class="section-title"><h2>Voice Settings</h2></div>
+
+      <label>
+        Engineer Voice
+        <select id="voiceSelect"></select>
+      </label>
+
+      <label>
+        Voice Speed
+        <div class="range-row">
+          <input id="rateSlider" type="range" min="0.7" max="1.5" step="0.05" value="1">
+          <span id="rateValue">1.00×</span>
+        </div>
+      </label>
+
+      <label>
+        Voice Pitch
+        <div class="range-row">
+          <input id="pitchSlider" type="range" min="0.5" max="1.5" step="0.05" value="0.95">
+          <span id="pitchValue">0.95</span>
+        </div>
+      </label>
+
+      <label>
+        Volume
+        <div class="range-row">
+          <input id="volumeSlider" type="range" min="0" max="1" step="0.05" value="1">
+          <span id="volumeValue">100%</span>
+        </div>
+      </label>
+
+      <button id="testVoiceBtn" class="test-button">🔊 TEST ENGINEER</button>
+    </section>
+
+    <section class="corner-panel">
+      <div class="section-title"><h2>Track Calls</h2></div>
+      <div id="cornerList" class="corner-list"></div>
+    </section>
+
+    <footer>
+      <span>SPA ENGINEER V4</span>
+      <span>Browser TTS • No backend required</span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
